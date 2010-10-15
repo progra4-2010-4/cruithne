@@ -2,15 +2,15 @@ require 'rubygems'
 require 'sinatra'
 
 get "/" do
-	send_file "about.html"
+	erb :about
 end
 
 get "/idea1" do
-	send_file "idea1.html"
+	erb :idea1
 end
 get "/idea2" do
-	send_file "WikiHonduras.html"
+	erb :WikiHonduras
 end
 get "/idea3" do
-	send_file "TabEditor.html"
+	erb :TabEditor
 end
