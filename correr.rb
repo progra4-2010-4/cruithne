@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'sinatra'
-require 'hpricot'
 
 get "/" do
 	erb :about
