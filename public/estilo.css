@@ -2,11 +2,28 @@ th{
 	font-family: Gill, Helvetica, sans-serif;
 	width:400px;
 }
-a{
-	font-size:16px;
-}
+
 body{
  background-color: #F5F5DC;/*Blanco hueso para el fondo*/
 
 }
 
+.hacia{  
+	font-size: 0.6em;
+    color: #828282;
+}
+
+header a.branding{
+    font-weight: bold;
+}
+
+header{
+    background-color: #00A287;
+    font-family: "Courier New", courier, monospace;
+}
+
+#nuevo
+{
+	position:absolute
+	left:500px;
+}
