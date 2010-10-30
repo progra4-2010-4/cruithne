@@ -1,2 +1,3 @@
 sinatra --version >=1.0
 datamapper
+dm-sqlite-adapter
