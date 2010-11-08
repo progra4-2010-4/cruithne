@@ -13,6 +13,8 @@ module NavigationHelpers
     when /la página raíz/
 	'/'
 
+    when /la página crear/
+	'/crear'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

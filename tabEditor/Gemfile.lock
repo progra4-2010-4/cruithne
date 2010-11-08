@@ -90,6 +90,7 @@ GEM
       rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
+    redgreen (1.2.2)
     rubyzip (0.9.4)
     selenium-webdriver (0.0.29)
       childprocess (>= 0.0.7)
@@ -112,4 +113,5 @@ DEPENDENCIES
   capybara
   cucumber-rails
   rails (= 3.0.1)
+  redgreen
   sqlite3-ruby
