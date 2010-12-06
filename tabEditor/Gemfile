@@ -19,7 +19,8 @@ group :development, :test do
 end
 # To use debugger
 # gem 'ruby-debug'
-
+gem 'devise'
+gem 'formtastic'
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'

@@ -1,4 +1,5 @@
 TabEditor::Application.routes.draw do
+  devise_for :users, :path=>"auth"  
   match "/crear" => "static#crear"
   root :to => "static#index"
   # The priority is based upon order of creation:
