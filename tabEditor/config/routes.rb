@@ -1,7 +1,16 @@
 TabEditor::Application.routes.draw do
-  devise_for :users, :path=>"auth"
-  resources :tabs  
-  match "/crear" => "static#crear"
+ 
+  devise_for :users, :path=>"auth" 
+
+  resources :tabs do
+	get 'search', :on => :collection
+	get('my', :on => :collection)
+  end
+
+  resources(:users,:only=>[:show]) do 
+    resources :tabs, :only=>[:index]
+  end
+
   root :to => "static#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
