@@ -1,7 +1,9 @@
 <h1>Pagina donde se crearan nuevas tablaturas</h1>
 <p>Crear nueva</p>
 
-<audio src="sounds/DO.mp3" autoplay></audio>
+<!--<audio src="sounds/DO.mp3" autoplay></audio> Prueba numero 1. Probando con JavaScript -->
+
+<input type="button" value ="Reproducir" onClick= "rep()">
 
 <div class="vex-tabdiv" width=400 scale=0.8>
   tabstave notation=true
@@ -9,6 +11,11 @@
 
   tabstave notation=true
   notes (8/2.7b9b7/3) (5b6/2.5b6/3)v 7s0/4 | (5/2.6/3.7/4)v
-<div>
+</div>
 
-
+<script>
+	function rep(){
+		var snd = new Audio("sounds/DO.mp3");
+		snd.play();
+	}
+</script>
