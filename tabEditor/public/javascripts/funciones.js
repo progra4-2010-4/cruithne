@@ -35,8 +35,4 @@ $(function(){
 	
 });
 
-$(function(){
-	$("body").keyup(function(event) {
-		$("#resultado").text(event.keyCode);
-	});
-};
+

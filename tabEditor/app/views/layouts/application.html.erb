@@ -28,7 +28,8 @@
 	<%if user_signed_in?%>
 	<ul>
 		<li><%=link_to "#{current_user.username.capitalize}'s tabs",my_tabs_path%></li>
-		<li><%=link_to "#{current_user.username.capitalize}'s profile",edit_user_password_path%></li>
+		<li><%=link_to "#{current_user.username.capitalize}'s profile",edit_user_registration_path%></li>
+		<li><%= link_to "Create new", new_tab_path %></li>
 	</ul>
 	<%end%>
 	
