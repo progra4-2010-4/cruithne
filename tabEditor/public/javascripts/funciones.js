@@ -1,38 +1,42 @@
 $(function(){
 	$("#do1").click(function(){
-		var snd = new Audio("sounds/DO.mp3");
-		snd.play();
+		tocar("sounds/DO.mp3");
+		$(".prueba").append("do ");
 	});
-	$("#do2").click(function(){
-		var snd = new Audio("sounds/DO2.mp3");
-		snd.play();
+	$("#domas").click(function(){
+		tocar("sounds/DO2.mp3");
+		$(".prueba").append("do2 ");
 	});
 	
 	$("#re").click(function(){
-		var snd = new Audio("sounds/RE.mp3");
-		snd.play();
+		tocar("sounds/RE.mp3");
+		$(".prueba").append("re ");
 	});
 	$("#mi").click(function(){
-		var snd = new Audio("sounds/MI.mp3");
-		snd.play();
+		tocar("sounds/MI.mp3");
+		$(".prueba").append("mi ");
 	});
 	$("#fa").click(function(){
-		var snd = new Audio("sounds/FA.mp3");
-		snd.play();
+		tocar("sounds/FA.mp3");
+		$(".prueba").append("fa ");
 	});
 	$("#sol").click(function(){
-		var snd = new Audio("sounds/SOL.mp3");
-		snd.play();
+		tocar("sounds/SOL.mp3");
+		$(".prueba").append("sol ");
 	});
 	$("#la").click(function(){
-		var snd = new Audio("sounds/LA.mp3");
-		snd.play();
+		tocar("sounds/LA.mp3");
+		$(".prueba").append("la ");
 	});
 	$("#si").click(function(){
-		var snd = new Audio("sounds/SI.mp3");
-		snd.play();
+		tocar("sounds/SI.mp3");
+		$(".prueba").append("si ");
 	});
+
 	
 });
 
-
+var tocar = function(ruta){
+	var snd = new Audio(ruta);
+	snd.play();
+}

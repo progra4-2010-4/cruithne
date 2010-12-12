@@ -1,7 +1,7 @@
 #content
 {
 	font-family:Arial,Helvetica,sans-serif;
-	
+	margin:0px;
 	color:#000;
 }
 html
@@ -21,7 +21,8 @@ a
 header
 {
 	border-radius:4px;
-	background-color:#707ED7;
+	background: -webkit-gradient(linear, left top, left bottom, from(#707ED7), to(#fafafa));
+	/*background-color:#707ED7;*/
 	color:#fff;
 	min-height:80px;
 }
@@ -29,6 +30,7 @@ header
 footer
 {
 	border-radius:4px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#707ED7));
 	background-color:#707ED7;
 	color:#fff;
 }
@@ -46,13 +48,32 @@ nav
 	border: 1px solid black;	
 	cursor:pointer;
 	background-color:#fff;
-	margin:0;
-	padding:0;
+	margin-left:-2px;
+	margin-right:-2px;
 }
 
 #imagen
 {
 	float:left;
 }
+ul{
+    list-style-type: none;
+}
 
+li
+{
+    border-radius:3px;
+    display:inline;
+    background-color:#fafafa;
+    margin:50px;
+}
 
+li:hover
+{
+	background-color:#03426a;
+}
+
+li:hover a
+{
+	color:#fff;
+}
