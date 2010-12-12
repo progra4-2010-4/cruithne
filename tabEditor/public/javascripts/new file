@@ -1,0 +1,7 @@
+$(function(){
+	$("#do1").click(function(){
+		$("#vex-tabdiv").append(" :q 1/4")
+
+
+	});
+});
