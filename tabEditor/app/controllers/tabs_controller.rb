@@ -8,4 +8,8 @@ class TabsController < ApplicationController
   def new
 
   end
+
+  def my
+
+  end
 end

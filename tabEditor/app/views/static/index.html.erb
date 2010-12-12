@@ -1,14 +1,2 @@
-<header>
-<h1>TabEditor</h1>
-<nav>
-<%unless user_signed_in?%>
-	<%=link_to "Login",new_user_session_path %>
-	<%=link_to "Registrarse",new_user_registration_path %>
-<%else%>
-	<%=link_to "Log out",destroy_user_session_path %>
-<%end%>
-<%=link_to "Crear Tablatura",new_tab_path %>  
-</nav>
-</header>
-<article>
-</article>
+
+<span id="resultado"></span>

@@ -8,9 +8,36 @@
   <%= csrf_meta_tag %>
   <!--<link href="/public/stylesheets/tabdiv.css" media="screen" rel="Stylesheet" type="text/css" />-->
 </head>
-<body>
+	<body>
+	<header>
+		<h1><a href="/">TabEditor</a></h1>
+		<nav>
+		<%unless user_signed_in?%>
+			<%=link_to "Login",new_user_session_path %>
+			<%=link_to "Registrarse",new_user_registration_path %>
+		<%else%>
+			<%=current_user.username.capitalize%>
+			<%=link_to "Log out",destroy_user_session_path %>
+		<%end%>
+		</nav>
+	</header>
 
-<%= yield %>
-
-</body>
+	<div id="imagen">
+	<%= link_to image_tag("prueba.png", :border=>0), new_tab_path %>
+	</div>
+	<%if user_signed_in?%>
+	<ul>
+		<li><%=link_to "#{current_user.username.capitalize}'s tabs",my_tabs_path%></li>
+		<li><%=link_to "#{current_user.username.capitalize}'s profile",edit_user_password_path%></li>
+	</ul>
+	<%end%>
+	
+	<div id="content" >
+	<%= yield %>
+	</div>
+	
+	<footer>
+	 Programacion 4
+	</footer>
+	</body>
 </html>

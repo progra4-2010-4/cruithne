@@ -21,6 +21,7 @@ end
 # gem 'ruby-debug'
 gem 'devise'
 gem 'formtastic'
+gem 'will_paginate'
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
