@@ -3,7 +3,7 @@ class CreateTabs < ActiveRecord::Migration
     create_table :tabs do |t|
       t.string :title
       t.text :body
-      t.boolean :private
+      t.boolean :privado
       t.integer :user_id
       t.timestamps
     end
