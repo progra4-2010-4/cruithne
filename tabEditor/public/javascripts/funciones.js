@@ -1,8 +1,8 @@
 $(function(){
 	$("#do1").click(function(){
 		tocar("sounds/DO.mp3");
-		$("#tab_body").append(" 0/4");
-		$(".vex-tabdiv").append("do ");
+		$("#tab_body").append("<span>notes :q 0/4</span>");
+		$(".vex-tabdiv").append("<span>notes :q 0/4</span>");
 	});
 	$("#domas").click(function(){
 		tocar("sounds/DO2.mp3");
