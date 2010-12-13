@@ -40,6 +40,31 @@ $(function(){
 		$(".vex-tabdiv").append("si ");
 		$("#tab_body").append("si ");
 	});
+	$("#c_sharp").click(function(){
+		tocar("sounds/piano_C_sharp.mp3");
+		$(".vex-tabdiv").append("#do ");
+		$("#tab_body").append("#do ");
+	});
+	$("#a_sharp").click(function(){
+		tocar("sounds/piano_A_sharp.mp3");
+		$(".vex-tabdiv").append("A_sharp");
+		$("#tab_body").append("A_sharp ");
+	});
+	$("#g_sharp").click(function(){
+		tocar("sounds/piano_G_sharp.mp3");
+		$(".vex-tabdiv").append("G_sharp ");
+		$("#tab_body").append("G_sharp ");
+	});
+	$("#f_sharp").click(function(){
+		tocar("sounds/piano_F_sharp.mp3");
+		$(".vex-tabdiv").append("F_sharp ");
+		$("#tab_body").append("F_sharp  ");
+	});
+	$("#d_sharp").click(function(){
+		tocar("sounds/piano_D_sharp.mp3");
+		$(".vex-tabdiv").append("D_sharp ");
+		$("#tab_body").append("D_sharp");
+	});
 
 	
 });
