@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(:version => 20101206140311) do
 
   create_table "tabs", :force => true do |t|
-    t.text     "title"
+    t.string   "title"
     t.text     "body"
     t.boolean  "private"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
