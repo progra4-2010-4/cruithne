@@ -1,0 +1,7 @@
+Buscar por titulo
+<%= form_tag tabs_path, :method => 'get' do %>
+  <p>
+    <input type="text" name="search" id="Search for" />
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>

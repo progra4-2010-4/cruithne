@@ -1,6 +1,6 @@
 #content
 {
-	font-family:Arial,Helvetica,sans-serif;
+	font-family: Arial , Helvetica , sans-serif;
 	margin:0px;
 	color:#000;
 	min-height:700px;
@@ -18,6 +18,7 @@ a
 {
 	color:#03426a;
 	text-decoration:none;
+	margin:10px;
 }
 
 header

@@ -4,7 +4,7 @@ class TabsController < ApplicationController
   end
 
   def index
-	@tabs = Tab.all
+	@tabs = Tab.all.paginate :per_page => 2,:page=>params[:page]
   end
 
   def new
@@ -12,7 +12,7 @@ class TabsController < ApplicationController
   end
 
   def my
-
+	@tabs = current_user.tabs.all.paginate :per_page => 1,:page=>params[:page]
   end
 
   def edit
@@ -36,4 +36,9 @@ class TabsController < ApplicationController
 	   render :edit
 	end
   end
+ 
+  def search
+
+  end
+
 end

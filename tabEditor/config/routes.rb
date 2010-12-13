@@ -11,7 +11,7 @@ TabEditor::Application.routes.draw do
     resources :tabs, :only=>[:index]
   end
 
-  root :to => "static#index"
+  root :to => "tabs#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
