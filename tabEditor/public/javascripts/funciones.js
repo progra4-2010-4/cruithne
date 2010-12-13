@@ -32,12 +32,12 @@ $(function(){
 	});
 	$("#la").click(function(){
 		tocar("sounds/LA.mp3");
-		$(".prueba").append("la ");
+		$(".vex-tabdiv").append("la ");
 		$("#tab_body").append("la ");
 	});
 	$("#si").click(function(){
 		tocar("sounds/SI.mp3");
-		$(".prueba").append("si ");
+		$(".vex-tabdiv").append("si ");
 		$("#tab_body").append("si ");
 	});
 
