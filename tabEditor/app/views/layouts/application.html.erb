@@ -22,14 +22,16 @@
 	        <%=link_to "Search tab",search_tabs_path%>
 		</nav>
 	</header>
-
+	 <p class="notice"><%= flash[:notice] %></p>
+   	 <p class="alert"><%= flash[:alert] %></p>
+	 <p class="errors"><%= flash[:errors] %></p>     
 	<div id="imagen">
 	<%= link_to image_tag("prueba.png", :border=>0), new_tab_path %>
 	</div>
 	<%if user_signed_in?%>
 	<ul>
 		<li><%=link_to "#{current_user.username.capitalize}'s tabs",my_tabs_path%></li>
-		<li><%=link_to "#{current_user.username.capitalize}'s profile",edit_user_registration_path%></li>
+		<li><%=link_to "Edit my profile",edit_user_registration_path%></li>
 		<li><%= link_to "Create new", new_tab_path %></li>
 	</ul>
 	<%end%>

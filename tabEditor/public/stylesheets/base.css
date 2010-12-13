@@ -103,9 +103,14 @@ fieldset
 	display:none;
 }
 
-#c_sharp
+#c_sharp,#d_sharp,#a_sharp,#f_sharp,#g_sharp
 {
 	position:relative;
-	left:-7px;
+}
 
+
+
+.errors
+{
+	background-color:#ff4040;
 }

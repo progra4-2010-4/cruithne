@@ -24,13 +24,14 @@ class TabsController < ApplicationController
 	if @tab.save
 	    redirect_to tab_path @tab
 	else
-	    render [ :action => "new"]
+	    flash[:errors] = "Please fill all required fields"
+	    redirect_to new_tab_path
 	end
   end
 
   def update
-	@tab = Snippet.find params[:id]
-	if @tab.update_attributes params[:snippet]
+	@tab = Tab.find params[:id]
+	if @tab.update_attributes params[:tab]
 	   redirect_to tab_path @tab
 	else
 	   render :edit
@@ -41,4 +42,10 @@ class TabsController < ApplicationController
 
   end
 
+ def destroy
+	@tab = Tab.find params[:id]
+	@tab.destroy
+	flash[:notice] = "removed"
+        redirect_to tabs_path 
+ end
 end

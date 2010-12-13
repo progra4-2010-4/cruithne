@@ -1,8 +1,11 @@
 $(function(){
 	$("#do1").click(function(){
 		tocar("sounds/DO.mp3");
-		$("#tab_body").append("<span>notes :q 0/4</span>");
-		$(".vex-tabdiv").append("<span>notes :q 0/4</span>");
+		/*el contenido/lo que se va guardar se encuentra en
+	        tab_body, cuando se toca el boton de do1, se agrega el texto al body, y al div de vextab
+		el problema es camibar dinamicamente la tablatura */
+		$("#tab_body").append("notes :q 0/4");
+		$(".vex-tabdiv").append("notes :q 0/4");
 	});
 	$("#domas").click(function(){
 		tocar("sounds/DO2.mp3");
