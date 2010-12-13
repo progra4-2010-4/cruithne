@@ -4,7 +4,7 @@ class TabsController < ApplicationController
   end
 
   def index
-	@tabs = Tab.getAll
+	@tabs = Tab.all.paginate :per_page => 1,:page=>params[:page]
   end
 
   def new
