@@ -6,6 +6,9 @@ var duraciones = {":w":1,":h":1/2,":q":1/4,":8":1/8,":16":1/16,":32":1/32}
 
 var versiones = []
 
+var pueda = {":w":true,":h":true,":q":true,":8":true,":16":true,":32":true,"3/5":true,"1/2":true,"5/5":true,"2/4":true,
+"3/4":true,"5/4":true,"2/3":true,"0/2":true,"4/5":true,"3/3":true,"1/3":true,"4/4":true,"1/4":true}
+
 var agregarnotas = function()
 {
 	$(".vex-tabdiv").tabdiv();
@@ -18,16 +21,30 @@ var agregarnotas = function()
 	$(".vex-tabdiv").tabdiv("renderText",s);
 }
 
+var limpiar = function(texto)
+{
+	if(texto===undefined)
+		return "";
+	d = texto.split(" ");
+	a = [];
+	x = d.length;
+	devolver =""
+	for(i = 0; i < x; i++){ if(pueda[d[i]]) a.push(d[i]);}
+	x = a.length;
+	for(i = 0; i < x; i++){ devolver = devolver + a[i] +" ";}
+	return devolver;
+}
+
 var undo = function()
 {
 	x = versiones.pop();
 	if(versiones.length == 0)
 	{
 		$("#undo").removeClass("visto").addClass("invisible");
-		$("#tab_body").text("")
 	}
 	$(".vex-tabdiv").tabdiv();
 	$(".vex-tabdiv").tabdiv("renderText",versiones[versiones.length -1]);
+	$("#tab_body").text(limpiar(versiones[versiones.length -1]))
 }
 
 var tocar = function(ruta){
@@ -46,7 +63,7 @@ var cambiartexto = function()
 	x = s.length;
 	a = [];
 	texto = "";
-	for(i = 0; i < x; i++){ if(s[i] != "") a.push(s[i]);}
+	for(i = 0; i < x; i++){ if(pueda[s[i]]) a.push(s[i]);}
 	x = a.length;
 	
 	for(i = 0; i < x; i++)
