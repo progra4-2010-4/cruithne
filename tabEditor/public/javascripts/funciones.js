@@ -4,7 +4,7 @@ var mapa = {"do1":"3/5","domas":"1/2","re":"5/5","mi":"2/4","fa":"3/4","sol":"5/
 
 var duraciones = {":w":1,":h":1/2,":q":1/4,":8":1/8,":16":1/16,":32":1/32}
 
-var agregarnotas = function(ruta,texto)
+var agregarnotas = function()
 {
 	$(".vex-tabdiv").tabdiv();
 	$(".vex-tabdiv").tabdiv("renderText",cambiartexto());
@@ -14,7 +14,7 @@ var agregarnotas = function(ruta,texto)
 var tocar = function(ruta){
 	var snd = new Audio("sounds/" + ruta+ ".mp3");
 	$("#tab_body").append(mapa[ruta] + " ");
-	agregarnotas(ruta,undefined)
+	agregarnotas()
 	snd.play();
 }
 
@@ -76,7 +76,7 @@ $(function(){
 	$(".duration").click(function(event)
 	{	var nombre = $(this)[0].value;
 		$("#tab_body").append(" :" + nombre + " ");
-		agregarnotas(undefined,nombre)
+		agregarnotas()
 		
 	});
 	$(".create").click(function(event)
@@ -84,6 +84,12 @@ $(function(){
 		$("#tab_body").text(cambiartexto());
 	});
 
+	$("#tab_body").keyup(function () {
+		s = $("#tab_body").text();
+	     	$(".vex-tabdiv").tabdiv();
+	        $(".vex-tabdiv").tabdiv("renderText",s);
+        }).keyup();
+	
 });
 
 

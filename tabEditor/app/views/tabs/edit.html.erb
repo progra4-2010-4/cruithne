@@ -1,29 +1,46 @@
-
-
-<div class="prueba"></div>
-
-
-<input type="button" value ="" id="do1" class="blanche">
-<input type="button" value ="" id="c_sharp" class="noir">
-<input type="button" value ="" id="re" class="blanche">
-<input type="button" value ="" id="d_sharp" class="noir">
-<input type="button" value ="" id="mi" class="blanche">
-<input type="button" value ="" id="fa" class="blanche">
-<input type="button" value ="" id="f_sharp" class="noir">
-<input type="button" value ="" id="sol" class="blanche">
-<input type="button" value ="" id="g_sharp" class="noir">
-<input type="button" value ="" id="la" class="blanche">
-<input type="button" value ="" id="a_sharp" class="noir">
-<input type="button" value ="" id="si" class="blanche">
-<input type="button" value ="" id="domas" class="blanche">
-
 <input type="button" value ="show" id="show">
+
 <%=semantic_form_for @tab do |f|%>
  	<%=f.inputs do%>
 		<%=f.input :title%>
-		<%=f.input :body%>
 		<%=f.input :privado%>
 	<%end%>
 	<%=f.buttons%>
+	<div class="vex-tabdiv" width=400 scale=0.8><%=raw @tab.body%></div>
 
+	<div id="musica">
+		<div id="piano">
+		<input type="button" value ="" id="do1" class="blanche">
+		<input type="button" value ="" id="c_sharp" class="noir">
+		<input type="button" value ="" id="re" class="blanche">
+		<input type="button" value ="" id="d_sharp" class="noir">
+		<input type="button" value ="" id="mi" class="blanche">
+		<input type="button" value ="" id="fa" class="blanche">
+		<input type="button" value ="" id="f_sharp" class="noir">
+		<input type="button" value ="" id="sol" class="blanche">
+		<input type="button" value ="" id="g_sharp" class="noir">
+		<input type="button" value ="" id="la" class="blanche">
+		<input type="button" value ="" id="a_sharp" class="noir">
+		<input type="button" value ="" id="si" class="blanche">
+		<input type="button" value ="" id="domas" class="blanche">
+		</div>
+
+		<div id="tiempos">
+		<span>Duration</span>
+		<input type="radio" class="duration" name="option1" value="w" > <span>1</span>
+		<input type="radio" class="duration" name="option1" value="h" > <span>1/2</span>
+		<input type="radio" class="duration" name="option1" value="q" > <span>1/4</span>
+		<input type="radio" class="duration" name="option1" value="8" checked> <span>1/8</span>
+		<input type="radio" class="duration" name="option1" value="16" > <span>1/16</span>
+		<input type="radio" class="duration" name="option1" value="32" > <span>1/32</span>
+		</div>
+	</div>
+
+	<%=f.inputs do%>
+		<%=f.input :body%>
+	<%end%>
 <% end %>  
+
+
+
+
