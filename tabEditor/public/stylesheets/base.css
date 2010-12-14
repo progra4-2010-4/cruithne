@@ -124,5 +124,13 @@ fieldset
 	top:400px;  
 	position:fixed; 
 }
+.invisible
+{	
+	display:none;
+}
+.visto
+{
+	display:block;
+}
 
 

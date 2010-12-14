@@ -4,12 +4,31 @@ var mapa = {"do1":"3/5","domas":"1/2","re":"5/5","mi":"2/4","fa":"3/4","sol":"5/
 
 var duraciones = {":w":1,":h":1/2,":q":1/4,":8":1/8,":16":1/16,":32":1/32}
 
+var versiones = []
+
 var agregarnotas = function()
 {
 	$(".vex-tabdiv").tabdiv();
-	$(".vex-tabdiv").tabdiv("renderText",cambiartexto());
+	s = cambiartexto();
+	versiones.push(s);
+	if(versiones.length > 0)
+	{
+	   $("#undo").removeClass("invisible").addClass("visto");
+	}
+	$(".vex-tabdiv").tabdiv("renderText",s);
 }
 
+var undo = function()
+{
+	x = versiones.pop();
+	if(versiones.length == 0)
+	{
+		$("#undo").removeClass("visto").addClass("invisible");
+		$("#tab_body").text("")
+	}
+	$(".vex-tabdiv").tabdiv();
+	$(".vex-tabdiv").tabdiv("renderText",versiones[versiones.length -1]);
+}
 
 var tocar = function(ruta){
 	var snd = new Audio("sounds/" + ruta+ ".mp3");
@@ -89,6 +108,10 @@ $(function(){
 	     	$(".vex-tabdiv").tabdiv();
 	        $(".vex-tabdiv").tabdiv("renderText",s);
         }).keyup();
+
+	$("#undo").click(function(event){
+		undo();
+	});
 	
 });
 
