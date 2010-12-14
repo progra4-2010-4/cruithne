@@ -121,7 +121,7 @@ $(function(){
 	});
 
 	$("#tab_body").keyup(function () {
-		s = $("#tab_body").text();
+		s = $("#tab_body").val();
 	     	$(".vex-tabdiv").tabdiv();
 	        $(".vex-tabdiv").tabdiv("renderText",s);
         }).keyup();

@@ -3,8 +3,8 @@ class Tab < ActiveRecord::Base
 	attr_accessible :title,:body,:privado
 	validates_presence_of :body
 	validates_presence_of :title
-	before_save :privatizar
-
+	before_validation :privatizar
+	
 	def privatizar
 		if self.privado.nil?
 			self.privado = false

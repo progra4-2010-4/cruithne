@@ -22,7 +22,7 @@ class TabsController < ApplicationController
   def create
 	 @tab = Tab.new(params[:tab])
          @tab.user_id = current_user.id if user_signed_in?	
-	if @tab.save
+        if @tab.save
 	    redirect_to tab_path @tab
 	else
 	    flash[:errors] = "Please fill all required fields"
