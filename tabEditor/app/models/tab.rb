@@ -10,22 +10,23 @@ class Tab < ActiveRecord::Base
 			self.privado = false
 		end
 	end
-	def self.custom_search(tabs,id,user_id,search,page)
+	def self.custom_search(id,user_id,search,page)
 		if user_id.nil?
-	          tabs.paginate :per_page => 1, :page => page,
+		    not_private().paginate :per_page => 1, :page => page,
 		     :conditions => ['title like ?', "%#{search}%"],
 		     :order => 'created_at DESC'
 		elsif search.blank?
-			tabs.paginate :per_page => 1, :page => page,
+		     not_private().paginate :per_page => 1, :page => page,
 			     :conditions => ['user_id like ?', "%#{user_id}%"],
 			     :order => 'created_at DESC'
 		else
-			tabs.paginate :per_page => 1, :page => page,
+		     not_private().paginate :per_page => 1, :page => page,
 			     :order => 'created_at DESC'
 		end
 	end
 
-	def self.not_private(tabs)
+	def self.not_private()
+		tabs = all
 		x = []
 		tabs.each do |t|
 		    unless t.privado

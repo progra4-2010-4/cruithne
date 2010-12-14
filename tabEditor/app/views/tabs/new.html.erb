@@ -6,7 +6,9 @@
  	<%=f.inputs do%>
 		<%=f.input :title%>
 		<%=f.input :body%>
+		<%if user_signed_in?%>
 		<%=f.input :privado%>
+		<%end%>
 	<%end%>
 	<%=f.buttons%>
 

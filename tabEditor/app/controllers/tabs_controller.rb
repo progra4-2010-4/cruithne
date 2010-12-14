@@ -4,7 +4,7 @@ class TabsController < ApplicationController
   end
 
   def index
-	@tabs = Tab.custom_search(Tab.not_private(Tab.all),params[:id],params[:user_id],params[:search],params[:page])
+	@tabs = Tab.custom_search(params[:id],params[:user_id],params[:search],params[:page])
 	
   end
  
@@ -21,8 +21,10 @@ class TabsController < ApplicationController
   end
   def create
 	 @tab = Tab.new(params[:tab])
-         @tab.user_id = current_user.id if user_signed_in?	
-        if @tab.save
+         @tab.user_id = current_user.id if user_signed_in?
+	 @tab.privado = false if @tab.privado.nil?
+	
+        if @tab.save  	
 	    redirect_to tab_path @tab
 	else
 	    flash[:errors] = "Please fill all required fields"
