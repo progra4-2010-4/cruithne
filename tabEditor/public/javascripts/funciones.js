@@ -38,9 +38,8 @@ var cambiartexto = function()
 			suma += inic;
 			if(suma >= 1)
 			{
-				suma = 0;
-				texto += "|";
-				contador++;
+				suma = 0;contador++;
+				if(contador == 1) texto += "|";
 				if(contador == 2)
 				{
 					texto = texto + "\n\ntabstave notation=true \nnotes ";
