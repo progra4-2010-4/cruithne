@@ -100,7 +100,7 @@ fieldset
 
 #tab_body_input
 {
-	/*display:none;"#show"*/
+	display:none;
 }
 
 #c_sharp,#d_sharp,#a_sharp,#f_sharp,#g_sharp
@@ -114,4 +114,12 @@ fieldset
 {
 	background-color:#ff4040;
 }
+
+#musica
+{
+	position:absolute;
+	left:600px;
+	top:400px;
+}
+
 
