@@ -1,1 +1,24 @@
-aqui mostrar los mios
+<%=will_paginate @tabs %>
+<dl>
+	<%@tabs.each do |s|%>		
+		</br>
+		<dt><em><%=s.title%></em> <%=distance_of_time_in_words DateTime.now, s.created_at  %> ago  
+		<%unless s.user_id.nil?%>	
+		   by <a href=<%="/users/#{s.user_id}/tabs"%> ><%=User.find(s.user_id).username%></a>
+		<%end%>
+		<%=link_to "View", s%> <%if user_signed_in?%>
+		<%if s.user_id.eql? current_user.id%>
+			<%=link_to "Edit", "/tabs/#{s.id}/edit"%>
+		<%end%>
+		<%end%></dt> </br>
+		<dd>
+		<div class="vex-tabdiv" width=400 scale=0.8>
+		    tabstave notation=true		
+		    notes <%=raw s.body%>
+		</div>
+		 </br></dd>
+	<%end%>
+</dl>
+
+
+<%=will_paginate @tabs %>

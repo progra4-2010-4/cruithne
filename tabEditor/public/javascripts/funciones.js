@@ -5,9 +5,15 @@ var mapa = {"do1":"3/5","domas":"1/2","re":"5/5","mi":"2/4","fa":"3/4","sol":"5/
 var tocar = function(ruta){
 	var snd = new Audio("sounds/" + ruta+ ".mp3");
 	$("#tab_body").append(mapa[ruta] + " ");
-	$(".vex-tabdiv").tabdiv("renderText",$(".vex-tabdiv").tabdiv("code") + mapa[ruta] + " ");	
-	/*$(".vex-tabdiv").append(nombre);*/
+	
+	if($(".vex-tabdiv").tabdiv("code") == ""){
+	     $(".vex-tabdiv").tabdiv();
+	     $(".vex-tabdiv").tabdiv("renderText",$(".vex-tabdiv").tabdiv("code") +"tabstave notation=true \n notes ");
+	}
+	$(".vex-tabdiv").tabdiv("renderText",$(".vex-tabdiv").tabdiv("code") +" "+ mapa[ruta] + " ")
 	snd.play();
+
+
 }
 
 $(function(){
@@ -23,6 +29,19 @@ $(function(){
 	$(".noir").click(function(event)
 	{	var nombre = $(this)[0].id;
 		tocar(nombre);
+	});
+	$("#show").click(function(event)
+	{
+		$("#tab_body_input").css({"display": "inherit"});
+	});
+	$("#show").css({"display": "block"});
+
+	$(".duration").click(function(event)
+	{	var nombre = $(this)[0].value;
+		$("#tab_body").append(" :" + nombre + " ");
+		s = $(".vex-tabdiv").tabdiv("code")
+		$(".vex-tabdiv").tabdiv();
+	        $(".vex-tabdiv").tabdiv("renderText",s +":" + nombre + " ");
 	});
 
 });

@@ -4,7 +4,7 @@
 
 <%if user_signed_in?%>
 	<%if @tab.user_id.eql? current_user.id%>
-		<%=link_to "Edit", "tabs/#{@tab.id}/edit"%>
+		<%=link_to "Edit", "/tabs/#{@tab.id}/edit"%>
 	<%end%>
 <%end%></dt> </br>
 <dd>

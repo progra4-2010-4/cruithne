@@ -1,17 +1,13 @@
-<h1>Pagina donde se crearan nuevas tablaturas</h1>
-<p>Crear nueva</p>
+<span>You can create new tabs by pressing the piano </span>
 
 <!--<audio src="sounds/DO.mp3" autoplay></audio> Prueba numero 1. Probando con JavaScript -->
 
 
 
-<div class="vex-tabdiv" width=400 scale=0.8>
-  tabstave notation=true
-  notes (8/2.7b9b7/3) (5b6/2.5b6/3)v 7s0/4 | (5/2.6/3.7/4)v
-</div>
+<div class="vex-tabdiv" width=400 scale=0.8></div>
 
-</audio>
 
+<div id="piano">
 <input type="button" value ="" id="do1" class="blanche">
 <input type="button" value ="" id="c_sharp" class="noir">
 <input type="button" value ="" id="re" class="blanche">
@@ -25,7 +21,17 @@
 <input type="button" value ="" id="a_sharp" class="noir">
 <input type="button" value ="" id="si" class="blanche">
 <input type="button" value ="" id="domas" class="blanche">
+</div>
 
+<div id="tiempos">
+<span>Duration</span>
+<input type="radio" class="duration" name="option1" value="w" checked> <span>1</span>
+<input type="radio" class="duration" name="option1" value="h" checked> <span>1/2</span>
+<input type="radio" class="duration" name="option1" value="q" checked> <span>1/4</span>
+<input type="radio" class="duration" name="option1" value="8" checked> <span>1/8</span>
+<input type="radio" class="duration" name="option1" value="16" checked> <span>1/16</span>
+<input type="radio" class="duration" name="option1" value="32" checked> <span>1/32</span>
+</div>
 
 <%=semantic_form_for @tab do |f|%>
  	<%=f.inputs do%>

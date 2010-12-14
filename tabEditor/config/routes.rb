@@ -2,7 +2,7 @@ TabEditor::Application.routes.draw do
  
   devise_for :users, :path=>"auth" 
 
-  resources :tabs do
+  resources(:tabs,:except=>[:destroy]) do
 	get 'search', :on => :collection
 	get('my', :on => :collection)
   end

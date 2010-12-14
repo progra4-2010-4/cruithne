@@ -4,9 +4,10 @@ class TabsController < ApplicationController
   end
 
   def index
-	@tabs = Tab.all.paginate :per_page => 1,:page=>params[:page]
+	@tabs = Tab.custom_search(Tab.not_private(Tab.all),params[:id],params[:user_id],params[:search],params[:page])
+	
   end
-
+ 
   def new
 	@tab = Tab.new
   end
@@ -42,10 +43,4 @@ class TabsController < ApplicationController
 
   end
 
- def destroy
-	@tab = Tab.find params[:id]
-	@tab.destroy
-	flash[:notice] = "removed"
-        redirect_to tabs_path 
- end
 end

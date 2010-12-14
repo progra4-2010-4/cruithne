@@ -100,7 +100,7 @@ fieldset
 
 #tab_body_input
 {
-	display:none;
+	/*display:none;"#show"*/
 }
 
 #c_sharp,#d_sharp,#a_sharp,#f_sharp,#g_sharp
@@ -114,3 +114,4 @@ fieldset
 {
 	background-color:#ff4040;
 }
+
