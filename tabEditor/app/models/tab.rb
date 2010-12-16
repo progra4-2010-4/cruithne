@@ -11,12 +11,14 @@ class Tab < ActiveRecord::Base
 		end
 	end
 	def self.custom_search(id,user_id,search,page)
-		if user_id.nil?
-		    not_private().paginate :per_page => 1, :page => page,
-		     :conditions => ['title like ?', "%#{search}%"],
-		     :order => 'created_at DESC'
-		elsif search.blank?
-		     not_private().paginate :per_page => 1, :page => page,
+		unless search.nil?
+			     paginate :per_page => 1, :page => page,
+			     :conditions => ['title like ?', "%#{search}%"],
+			     :order => 'created_at DESC'
+		end
+		
+		if search.blank? and not user_id.nil?
+		     User.find(user_id).tabs.not_private().paginate :per_page => 1, :page => page,
 			     :conditions => ['user_id like ?', "%#{user_id}%"],
 			     :order => 'created_at DESC'
 		else

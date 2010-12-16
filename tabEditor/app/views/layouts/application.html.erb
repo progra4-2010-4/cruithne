@@ -30,7 +30,7 @@
 	<%= link_to image_tag("prueba.png", :border=>0), new_tab_path %>
 	</div>
 	<%if user_signed_in?%>
-	<ul>
+	<ul id="menu">
 		<li><%=link_to "#{current_user.username.capitalize}'s tabs",my_tabs_path%></li>
 		<li><%=link_to "Edit my profile",edit_user_registration_path%></li>
 	</ul>

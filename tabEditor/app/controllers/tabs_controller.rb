@@ -5,7 +5,6 @@ class TabsController < ApplicationController
 
   def index
 	@tabs = Tab.custom_search(params[:id],params[:user_id],params[:search],params[:page])
-	
   end
  
   def new

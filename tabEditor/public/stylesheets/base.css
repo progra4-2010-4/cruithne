@@ -1,12 +1,13 @@
 #content
 {
-	font-family: Arial , Helvetica , sans-serif;
+	
 	margin:0px;
 	color:#000;
-	min-height:700px;
+	min-height:502px;
 }
 html
 {
+	font-family: Arial , Helvetica , sans-serif;
 	background-color:#fafafa;
 }
 h1
@@ -28,6 +29,10 @@ header
 	/*background-color:#707ED7;*/
 	color:#03426a;
 	min-height:80px;
+	margin-left:-8px;
+	margin-right:-8px;
+	margin-top:-22px;
+	padding:-5px;
 }
 
 footer
@@ -83,12 +88,12 @@ li
     margin:50px;
 }
 
-li:hover
+#menu li:hover
 {
 	background-color:#03426a;
 }
 
-li:hover a
+#menu li:hover a
 {
 	color:#fff;
 }
@@ -120,8 +125,8 @@ fieldset
 	width:450px;  
 	height:200px;   
 	text-align:right;  
-	right:300px;  
-	top:400px;  
+	left:50px;  
+	top:200px;  
 	position:fixed; 
 }
 .invisible
@@ -133,4 +138,30 @@ fieldset
 	display:block;
 }
 
+#tiempos
+{
+	color:#fff;
+	width:380px;
+	float:right;
+	background-color:#03426a;
+}
 
+
+.muestra
+{
+	display:inline;
+	position:relative;
+	left:75px;
+	top:180px;
+	
+}
+
+.tab
+{
+	float:right;
+}
+
+.tab li
+{
+	display:block;
+}
